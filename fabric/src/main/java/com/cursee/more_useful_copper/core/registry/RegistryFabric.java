@@ -19,6 +19,8 @@ public class RegistryFabric {
         ModEntityTypesFabric.register();
         ModItemsFabric.register();
         ModTabsFabric.register();
+
+        ModLootTableModifiers.register();
     }
 
     protected static <T extends Block> T registerBlock(String blockID, Supplier<T> blockSupplier) {

@@ -19,6 +19,11 @@ dependencies {
     implementation project(":common")
 
     modImplementation "curse.maven:monolib-968432:5838445"
+
+    // Lootr dependency
+    modImplementation "curse.maven:cloth-config-348521:5729104"
+    // Lootr for testing
+    modImplementation "curse.maven:lootr-fabric-615106:5639247"
 }
 
 loom {

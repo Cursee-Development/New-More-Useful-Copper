@@ -81,6 +81,9 @@ dependencies {
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
     implementation fg.deobf("curse.maven:monolib-968432:5838457")
+
+    // Lootr for testing
+    implementation fg.deobf("curse.maven:lootr-361276:5636598")
 }
 
 tasks.withType(JavaCompile).configureEach {

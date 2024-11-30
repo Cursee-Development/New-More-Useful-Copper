@@ -17,7 +17,6 @@ public class MoreUsefulCopperFabric implements ModInitializer {
         RegistryFabric.register();
 
         MoreUsefulCopperFabric.registerEntityAttributes();
-        ModLootTableModifiers.modifyLootTables();
     }
 
     private static void registerEntityAttributes() {
