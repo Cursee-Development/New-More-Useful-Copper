@@ -1,5 +1,7 @@
 package com.cursee.more_useful_copper.platform.services;
 
+import net.minecraft.world.item.Item;
+
 public interface IPlatformHelper {
 
     /**
@@ -33,4 +35,9 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
+
+    Item getEmptyCopperBucketItem();
+    Item getWaterCopperBucketItem();
+    Item getMilkCopperBucketItem();
+    Item getSnowCopperBucketItem();
 }

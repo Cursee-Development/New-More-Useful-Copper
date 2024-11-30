@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "moreusefulcopper:copper_helmet",
+    "moreusefulcopper:copper_chestplate",
+    "moreusefulcopper:copper_leggings",
+    "moreusefulcopper:copper_boots"
+  ]
+}
