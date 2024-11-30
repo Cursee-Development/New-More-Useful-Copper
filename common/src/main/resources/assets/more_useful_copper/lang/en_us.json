@@ -1,6 +1,7 @@
 {
-  "itemGroup.moreUsefulCopper": "more_useful_copper!",
+  "itemGroup.moreUsefulCopper": "More Useful Copper!",
   "item.more_useful_copper.copper_axe": "Copper Axe",
+  "item.more_useful_copper.copper_nugget": "Copper Nugget",
   "item.more_useful_copper.copper_hoe": "Copper Hoe",
   "item.more_useful_copper.copper_pickaxe": "Copper Pickaxe",
   "item.more_useful_copper.copper_shovel": "Copper Shovel",
