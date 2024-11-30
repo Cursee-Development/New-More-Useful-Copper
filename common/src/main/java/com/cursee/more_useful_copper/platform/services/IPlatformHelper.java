@@ -1,4 +1,4 @@
-package com.cursee.examplemod.platform.services;
+package com.cursee.more_useful_copper.platform.services;
 
 public interface IPlatformHelper {
 

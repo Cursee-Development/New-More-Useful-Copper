@@ -1,9 +1,7 @@
-package com.cursee.examplemod.mixin;
+package com.cursee.more_useful_copper.mixin;
 
-import com.cursee.examplemod.Constants;
-import com.cursee.examplemod.platform.Services;
-import com.cursee.monolib.core.MonoLibConfiguration;
-import net.minecraft.client.Minecraft;
+import com.cursee.more_useful_copper.Constants;
+import com.cursee.more_useful_copper.platform.Services;
 import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
