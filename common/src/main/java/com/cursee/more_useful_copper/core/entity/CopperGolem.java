@@ -29,7 +29,7 @@ import java.util.UUID;
 
 public class CopperGolem extends PathfinderMob implements NeutralMob {
 
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MOD_ID, "copper_golem"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "copper_golem"), "main");
 
     private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.BOOLEAN);
 
@@ -48,10 +48,16 @@ public class CopperGolem extends PathfinderMob implements NeutralMob {
                 .add(Attributes.ATTACK_DAMAGE, 15.0D);
     }
 
+//    @Override
+//    protected void defineSynchedData() {
+//        super.defineSynchedData();
+//        this.entityData.define(ATTACKING, false);
+//    }
+
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
+    protected void defineSynchedData(SynchedEntityData.Builder $$0) {
+        super.defineSynchedData($$0);
+        $$0.define(ATTACKING, false);
     }
 
     @Override

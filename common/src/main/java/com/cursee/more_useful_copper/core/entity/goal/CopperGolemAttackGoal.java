@@ -40,7 +40,7 @@ public class CopperGolemAttackGoal extends MeleeAttackGoal {
     }
 
     @Override
-    protected void checkAndPerformAttack(LivingEntity hitEntity, double reach) {
+    protected void checkAndPerformAttack(LivingEntity hitEntity) {
 
         if (this.entity.distanceToSqr(hitEntity) <= 2.0D) {
             this.shouldCountTillNextAttack = true;

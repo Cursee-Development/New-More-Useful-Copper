@@ -9,7 +9,7 @@ public class ModBlocksForge {
 
     public static void register() {}
 
-    public static final RegistryObject<Block> COPPER_CHAIN = RegistryForge.registerBlockWithItem("copper_chain", () -> new ChainBlock(BlockBehaviour.Properties.copy(Blocks.CHAIN)));
-    public static final RegistryObject<Block> COPPER_BUTTON = RegistryForge.registerBlockWithItem("copper_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, true));
-    public static final RegistryObject<Block> COPPER_PRESSURE_PLATE = RegistryForge.registerBlockWithItem("copper_pressure_plate", () -> new WeightedPressurePlateBlock(150, BlockBehaviour.Properties.copy(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE), BlockSetType.IRON));
+    public static final RegistryObject<Block> COPPER_CHAIN = RegistryForge.registerBlockWithItem("copper_chain", () -> new ChainBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHAIN)));
+    public static final RegistryObject<Block> COPPER_BUTTON = RegistryForge.registerBlockWithItem("copper_button", () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BUTTON)));
+    public static final RegistryObject<Block> COPPER_PRESSURE_PLATE = RegistryForge.registerBlockWithItem("copper_pressure_plate", () -> new WeightedPressurePlateBlock(150, BlockSetType.IRON, BlockBehaviour.Properties.ofFullCopy(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)));
 }

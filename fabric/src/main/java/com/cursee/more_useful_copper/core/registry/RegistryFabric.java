@@ -24,7 +24,7 @@ public class RegistryFabric {
     }
 
     protected static <T extends Block> T registerBlock(String blockID, Supplier<T> blockSupplier) {
-        return Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(Constants.MOD_ID, blockID), blockSupplier.get());
+        return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, blockID), blockSupplier.get());
     }
 
     protected static <T extends Block> T registerBlockWithItem(String blockID, Supplier<T> blockSupplier) {
@@ -34,14 +34,14 @@ public class RegistryFabric {
     }
 
     protected static <T extends EntityType<?>> T registerEntityType(String entityID, Supplier<T> entitySupplier) {
-        return Registry.register(BuiltInRegistries.ENTITY_TYPE, new ResourceLocation(Constants.MOD_ID, entityID), entitySupplier.get());
+        return Registry.register(BuiltInRegistries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, entityID), entitySupplier.get());
     }
 
     protected static <T extends Item> T registerItem(String itemID, Supplier<T> itemSupplier) {
-        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Constants.MOD_ID, itemID), itemSupplier.get());
+        return Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, itemID), itemSupplier.get());
     }
 
     protected static <T extends CreativeModeTab> T registerTab(String tabID, Supplier<T> tabSupplier) {
-        return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(Constants.MOD_ID, tabID), tabSupplier.get());
+        return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, tabID), tabSupplier.get());
     }
 }

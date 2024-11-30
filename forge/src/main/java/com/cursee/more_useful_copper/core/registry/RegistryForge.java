@@ -2,6 +2,7 @@ package com.cursee.more_useful_copper.core.registry;
 
 import com.cursee.more_useful_copper.Constants;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -24,7 +25,7 @@ public class RegistryForge {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MOD_ID);
 
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Constants.MOD_ID);
+    public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Constants.MOD_ID);
 
     public static void register(IEventBus modEventBus) {
         ModBlocksForge.register();
@@ -64,7 +65,7 @@ public class RegistryForge {
         return TABS.register(tabID, tabSupplier);
     }
 
-    protected static <T extends Codec<? extends IGlobalLootModifier>> RegistryObject<T> registerLootModifierSerializer(String serializerID, Supplier<T> serializerSupplier) {
+    protected static <T extends MapCodec<? extends IGlobalLootModifier>> RegistryObject<T> registerLootModifierSerializer(String serializerID, Supplier<T> serializerSupplier) {
         return LOOT_MODIFIER_SERIALIZERS.register(serializerID, serializerSupplier);
     }
 }

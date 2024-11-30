@@ -2,8 +2,10 @@ package com.cursee.more_useful_copper.core.registry.loot;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -17,11 +19,15 @@ import java.util.function.Supplier;
 
 public class AddItemModifier extends LootModifier {
 
-    public static final Supplier<Codec<AddItemModifier>> CODEC = Suppliers.memoize(
-            () -> RecordCodecBuilder.create(inst -> codecStart(inst)
-                    .and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(m -> m.item))
-                    .apply(inst, AddItemModifier::new)
-            )
+//    public static final Supplier<Codec<AddItemModifier>> CODEC = Suppliers.memoize(
+//            () -> RecordCodecBuilder.create(inst -> codecStart(inst)
+//                    .and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(m -> m.item))
+//                    .apply(inst, AddItemModifier::new)
+//            )
+//    );
+
+    public static final MapCodec<AddItemModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
+            LootModifier.codecStart(inst).and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(e -> e.item)).apply(inst, AddItemModifier::new)
     );
 
     private final Item item;
@@ -32,8 +38,8 @@ public class AddItemModifier extends LootModifier {
     }
 
     @Override
-    public Codec<? extends IGlobalLootModifier> codec() {
-        return CODEC.get();
+    public MapCodec<? extends IGlobalLootModifier> codec() {
+        return CODEC;
     }
 
     @Override

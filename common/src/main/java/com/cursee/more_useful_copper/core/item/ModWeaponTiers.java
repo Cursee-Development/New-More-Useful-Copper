@@ -43,6 +43,11 @@ public enum ModWeaponTiers implements Tier {
         return this.damage;
     }
 
+    @Override
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return BlockTags.INCORRECT_FOR_IRON_TOOL;
+    }
+
     public int getLevel() {
         return this.level;
     }

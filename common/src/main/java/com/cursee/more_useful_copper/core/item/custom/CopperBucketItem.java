@@ -26,8 +26,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult.Type;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class CopperBucketItem extends Item implements DispensibleContainerItem {
 	private final Fluid content;
@@ -101,8 +100,7 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem {
 					// should handle picking up and placing water
 					if (vBlockState.getBlock() instanceof BucketPickup && vBlockState.getBlock() != Blocks.LAVA && vBlockState.getBlock() != Blocks.LAVA_CAULDRON) {
 						BucketPickup vBucketPickup = (BucketPickup)vBlockState.getBlock();
-						// ItemStack vItemStack1 = vBucketPickup.pickupBlock(pPlayer, pLevel, vBlockPos, vBlockState);
-						ItemStack vItemStack1 = vBucketPickup.pickupBlock(pLevel, vBlockPos, vBlockState);
+						ItemStack vItemStack1 = vBucketPickup.pickupBlock(pPlayer, pLevel, vBlockPos, vBlockState);
 
 						/* ADDED */
 						if (vItemStack1.getItem() == Items.WATER_BUCKET) {
@@ -183,8 +181,7 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem {
 					
 					if (/* EDITED */ block instanceof BucketPickup /* ADDED */ && block == Blocks.WATER) {
 						BucketPickup vBucketPickup = (BucketPickup)vBlockState.getBlock();
-						// ItemStack vItemStack1 = vBucketPickup.pickupBlock(pPlayer, pLevel, vBlockPos, vBlockState);
-						ItemStack vItemStack1 = vBucketPickup.pickupBlock(pLevel, vBlockPos, vBlockState);
+						ItemStack vItemStack1 = vBucketPickup.pickupBlock(pPlayer, pLevel, vBlockPos, vBlockState);
 
 						/* ADDED */
 						if (vItemStack1.getItem() == Items.WATER_BUCKET) {
@@ -242,7 +239,7 @@ public class CopperBucketItem extends Item implements DispensibleContainerItem {
 			BlockState state = level.getBlockState(pos);
 			Block block = state.getBlock();
 			boolean $$6 = state.canBeReplaced(this.content);
-			boolean $$7 = state.isAir() || $$6 || block instanceof LiquidBlockContainer && ((LiquidBlockContainer)block).canPlaceLiquid(level, pos, state, this.content);
+			boolean $$7 = state.isAir() || $$6 || block instanceof LiquidBlockContainer && ((LiquidBlockContainer)block).canPlaceLiquid(player, level, pos, state, this.content);
 			if (!$$7) {
 				return result != null && this.emptyContents(player, level, result.getBlockPos().relative(result.getDirection()), (BlockHitResult)null);
 			} else if (level.dimensionType().ultraWarm() && this.content.is(FluidTags.WATER)) {
