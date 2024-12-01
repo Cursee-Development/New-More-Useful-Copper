@@ -5,6 +5,7 @@ import com.cursee.more_useful_copper.core.item.ModWeaponTiers;
 import com.cursee.more_useful_copper.core.item.custom.CopperBucketItem;
 import com.cursee.more_useful_copper.core.item.custom.CopperMilkBucketItem;
 import com.cursee.more_useful_copper.core.item.custom.CopperSolidBucketItem;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
@@ -26,7 +27,7 @@ public class ModItemsForge {
     public static final RegistryObject<Item> COPPER_WATER_BUCKET = RegistryForge.registerItem("copper_water_bucket", () ->  new CopperBucketItem(Fluids.WATER, new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
     public static final RegistryObject<Item> COPPER_MILK_BUCKET = RegistryForge.registerItem("copper_milk_bucket", () ->  new CopperMilkBucketItem(new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
     public static final RegistryObject<Item> COPPER_POWDER_SNOW_BUCKET = RegistryForge.registerItem("copper_powder_snow_bucket", () -> new CopperSolidBucketItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, (new Item.Properties()).stacksTo(1)));
-    public static final RegistryObject<Item> COPPER_SHEARS = RegistryForge.registerItem("copper_shears", () ->  new ShearsItem(new Item.Properties().durability(238)));
+    public static final RegistryObject<Item> COPPER_SHEARS = RegistryForge.registerItem("copper_shears", () ->  new ShearsItem(new Item.Properties().durability(238).component(DataComponents.TOOL, ShearsItem.createToolProperties())));
     public static final RegistryObject<Item> COPPER_GOLEM_SPAWN_EGG = RegistryForge.registerItem("copper_golem_spawn_egg", () ->  new ForgeSpawnEggItem(() -> ModEntityTypesForge.COPPER_GOLEM.get(), 0x6D3421, 0xE77C56, new Item.Properties()));
 
     public static final RegistryObject<Item> COPPER_HORSE_ARMOR = RegistryForge.registerItem("copper_horse_armor", () ->  new AnimalArmorItem(ModArmorMaterials.COPPER, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
