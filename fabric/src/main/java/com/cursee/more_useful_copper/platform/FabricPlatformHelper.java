@@ -1,9 +1,14 @@
 package com.cursee.more_useful_copper.platform;
 
+import com.cursee.more_useful_copper.core.entity.CopperGolem;
+import com.cursee.more_useful_copper.core.registry.ModEntityTypesFabric;
 import com.cursee.more_useful_copper.core.registry.ModItemsFabric;
 import com.cursee.more_useful_copper.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+
+import java.util.function.Supplier;
 
 public class FabricPlatformHelper implements IPlatformHelper {
 

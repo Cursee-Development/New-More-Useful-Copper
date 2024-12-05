@@ -1,6 +1,11 @@
 package com.cursee.more_useful_copper.platform.services;
 
+import com.cursee.more_useful_copper.core.entity.CopperGolem;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+
+import java.util.function.Supplier;
 
 public interface IPlatformHelper {
 

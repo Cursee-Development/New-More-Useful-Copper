@@ -1,10 +1,15 @@
 package com.cursee.more_useful_copper.platform;
 
+import com.cursee.more_useful_copper.core.entity.CopperGolem;
+import com.cursee.more_useful_copper.core.registry.ModEntityTypesForge;
 import com.cursee.more_useful_copper.core.registry.ModItemsForge;
 import com.cursee.more_useful_copper.platform.services.IPlatformHelper;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
+
+import java.util.function.Supplier;
 
 public class ForgePlatformHelper implements IPlatformHelper {
 
