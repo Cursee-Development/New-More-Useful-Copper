@@ -15,7 +15,6 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 public class CopperMilkBucketItem extends Item {
-	private static final int DRINK_DURATION = 32;
 	
 	public CopperMilkBucketItem(Properties pProperties) {
 		super(pProperties);
@@ -37,11 +36,18 @@ public class CopperMilkBucketItem extends Item {
 		
 		return pItemStack.isEmpty() ? Services.PLATFORM.getEmptyCopperBucketItem().getDefaultInstance() : pItemStack;
 	}
-	
-	public int getUseDuration(ItemStack $$0) {
-		return DRINK_DURATION;
+
+//	@Override
+//	public int getUseDuration(ItemStack $$0) {
+//		return DRINK_DURATION;
+//	}
+
+	@Override
+	public int getUseDuration(ItemStack pStack, LivingEntity pEntity) {
+		return 32;
 	}
-	
+
+	@Override
 	public UseAnim getUseAnimation(ItemStack $$0) {
 		return UseAnim.DRINK;
 	}
