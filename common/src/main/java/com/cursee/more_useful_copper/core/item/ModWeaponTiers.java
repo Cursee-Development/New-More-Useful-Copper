@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public enum ModWeaponTiers implements Tier {
 
-    COPPER(2, 250, 6.0F, 2.0F, 14, () -> Ingredient.of(Items.COPPER_INGOT));
+    COPPER(1, 150, 10.0F, 0.5F, 22, () -> Ingredient.of(Items.COPPER_INGOT));
 
     private final int level;
     private final int uses;
