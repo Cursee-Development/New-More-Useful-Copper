@@ -8,7 +8,6 @@
     "ForgeCarvedPumpkinBlockMixin"
   ],
   "client": [
-    "NeoForgeTitleScreenMixin"
   ],
   "server": [],
   "injectors": {

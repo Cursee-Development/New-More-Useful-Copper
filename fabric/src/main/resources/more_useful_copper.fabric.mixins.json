@@ -10,7 +10,6 @@
         "FabricCarvedPumpkinBlockMixin"
     ],
     "client": [
-        "FabricTitleScreenMixin"
     ],
     "server": [
     ],
