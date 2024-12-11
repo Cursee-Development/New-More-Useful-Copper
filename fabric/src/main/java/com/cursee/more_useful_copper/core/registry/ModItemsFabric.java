@@ -29,10 +29,11 @@ public class ModItemsFabric {
     public static final Item COPPER_GOLEM_SPAWN_EGG = RegistryFabric.registerItem("copper_golem_spawn_egg", () ->  new SpawnEggItem(ModEntityTypesFabric.COPPER_GOLEM, 0x6D3421, 0xE77C56, new Item.Properties()));
 
     public static final Item COPPER_HORSE_ARMOR = RegistryFabric.registerItem("copper_horse_armor", () ->  new AnimalArmorItem(ModArmorMaterials.COPPER, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
-    public static final Item COPPER_HELMET = RegistryFabric.registerItem("copper_helmet", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1)));
-    public static final Item COPPER_CHESTPLATE = RegistryFabric.registerItem("copper_chestplate", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1)));
-    public static final Item COPPER_LEGGINGS = RegistryFabric.registerItem("copper_leggings", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1)));
-    public static final Item COPPER_BOOTS = RegistryFabric.registerItem("copper_boots", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1)));
+
+    public static final Item COPPER_HELMET = RegistryFabric.registerItem("copper_helmet", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).durability(15*13)));
+    public static final Item COPPER_CHESTPLATE = RegistryFabric.registerItem("copper_chestplate", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).durability(15*16)));
+    public static final Item COPPER_LEGGINGS = RegistryFabric.registerItem("copper_leggings", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).durability(15*17)));
+    public static final Item COPPER_BOOTS = RegistryFabric.registerItem("copper_boots", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).durability(15*11)));
 
     public static final Item COPPER_NUGGET = RegistryFabric.registerItem("copper_nugget", () -> new Item(new Item.Properties()));
 }
