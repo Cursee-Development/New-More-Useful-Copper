@@ -9,7 +9,6 @@
         "ForgeCarvedPumpkinBlockMixin"
     ],
     "client": [
-        "ForgeTitleScreenMixin"
     ],
     "server": [
     ],
