@@ -7,15 +7,15 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-public class ModTabsForge {
+public class ModTabsNeoForge {
 
     public static void register() {}
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = RegistryForge.registerTab(Constants.MOD_ID, () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = RegistryNeoForge.registerTab(Constants.MOD_ID, () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .icon(() -> new ItemStack(ModItemsNeoForge.COPPER_HORSE_ARMOR.get()))
             .title(Component.translatable("itemGroup.moreUsefulCopper"))
-            .displayItems(ModTabsForge::addItems).build());
+            .displayItems(ModTabsNeoForge::addItems).build());
 
     private static void addItems(CreativeModeTab.ItemDisplayParameters displayParameters, CreativeModeTab.Output output) {
         output.accept(ModItemsNeoForge.COPPER_SWORD.get());

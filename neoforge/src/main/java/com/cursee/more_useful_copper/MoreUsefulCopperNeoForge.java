@@ -4,7 +4,7 @@ import com.cursee.monolib.core.sailing.Sailing;
 import com.cursee.more_useful_copper.core.client.entity.model.CopperGolemModel;
 import com.cursee.more_useful_copper.core.entity.CopperGolem;
 import com.cursee.more_useful_copper.core.registry.ModEntityTypesNeoForge;
-import com.cursee.more_useful_copper.core.registry.RegistryForge;
+import com.cursee.more_useful_copper.core.registry.RegistryNeoForge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -18,7 +18,7 @@ public class MoreUsefulCopperNeoForge {
     public MoreUsefulCopperNeoForge(IEventBus modEventBus) {
         MoreUsefulCopper.init();
         Sailing.register(Constants.MOD_NAME, Constants.MOD_ID, Constants.MOD_VERSION, Constants.MC_VERSION_RAW, Constants.PUBLISHER_AUTHOR, Constants.PRIMARY_CURSEFORGE_MODRINTH);
-        RegistryForge.register(modEventBus);
+        RegistryNeoForge.register(modEventBus);
     }
 
     @EventBusSubscriber(modid = Constants.MOD_ID, bus = EventBusSubscriber.Bus.MOD)

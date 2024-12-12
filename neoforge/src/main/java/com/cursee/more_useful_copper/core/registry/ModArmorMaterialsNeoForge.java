@@ -17,7 +17,7 @@ public class ModArmorMaterialsNeoForge {
 
     public static void register() {}
 
-    public static final Holder<ArmorMaterial> COPPER = RegistryForge.ARMOR_MATERIALS.register("copper",
+    public static final Holder<ArmorMaterial> COPPER = RegistryNeoForge.ARMOR_MATERIALS.register("copper",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 2);
                 map.put(ArmorItem.Type.LEGGINGS, 3);

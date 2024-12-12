@@ -11,5 +11,5 @@ public class ModEntityTypesNeoForge {
 
     public static void register() {}
 
-    public static final DeferredHolder<EntityType<?>, EntityType<CopperGolem>> COPPER_GOLEM = RegistryForge.registerEntityType("copper_golem", () -> EntityType.Builder.<CopperGolem>of(CopperGolem::new, MobCategory.MISC).sized(1.4f, 2.7f).clientTrackingRange(10).build(ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "copper_golem").toString()));
+    public static final DeferredHolder<EntityType<?>, EntityType<CopperGolem>> COPPER_GOLEM = RegistryNeoForge.registerEntityType("copper_golem", () -> EntityType.Builder.<CopperGolem>of(CopperGolem::new, MobCategory.MISC).sized(1.4f, 2.7f).clientTrackingRange(10).build(ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "copper_golem").toString()));
 }

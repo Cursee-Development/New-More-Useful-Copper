@@ -18,7 +18,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-public class RegistryForge {
+public class RegistryNeoForge {
 
     public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, Constants.MOD_ID);
 
@@ -34,7 +34,7 @@ public class RegistryForge {
         ModBlocksNeoForge.register();
         ModEntityTypesNeoForge.register();
         ModItemsNeoForge.register();
-        ModTabsForge.register();
+        ModTabsNeoForge.register();
         ModLootTableModifiers.register();
 
         ARMOR_MATERIALS.register(modEventBus);

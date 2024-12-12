@@ -9,5 +9,5 @@ public class ModLootTableModifiers {
 
     public static void register() {}
 
-    public static final DeferredHolder<MapCodec<? extends IGlobalLootModifier>, MapCodec<? extends IGlobalLootModifier>> ADD_ITEM = RegistryForge.registerLootModifierSerializer("add_item", () -> AddItemModifier.CODEC);
+    public static final DeferredHolder<MapCodec<? extends IGlobalLootModifier>, MapCodec<? extends IGlobalLootModifier>> ADD_ITEM = RegistryNeoForge.registerLootModifierSerializer("add_item", () -> AddItemModifier.CODEC);
 }
