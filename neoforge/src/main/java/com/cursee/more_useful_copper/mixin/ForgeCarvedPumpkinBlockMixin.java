@@ -1,7 +1,7 @@
 package com.cursee.more_useful_copper.mixin;
 
 import com.cursee.more_useful_copper.core.entity.CopperGolem;
-import com.cursee.more_useful_copper.core.registry.ModEntityTypesForge;
+import com.cursee.more_useful_copper.core.registry.ModEntityTypesNeoForge;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -39,7 +39,7 @@ public class ForgeCarvedPumpkinBlockMixin {
 
         if (blocksInPattern != null) {
 
-            CopperGolem golem = ModEntityTypesForge.COPPER_GOLEM.get().create(level);
+            CopperGolem golem = ModEntityTypesNeoForge.COPPER_GOLEM.get().create(level);
 
             if (golem != null) {
                 unique_$_clearPatternAndSpawnEntity(level, blocksInPattern, golem, blocksInPattern.getBlock(1, 2, 0).getPos());

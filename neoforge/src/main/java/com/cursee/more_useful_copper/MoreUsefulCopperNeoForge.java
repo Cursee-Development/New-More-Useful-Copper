@@ -3,7 +3,7 @@ package com.cursee.more_useful_copper;
 import com.cursee.monolib.core.sailing.Sailing;
 import com.cursee.more_useful_copper.core.client.entity.model.CopperGolemModel;
 import com.cursee.more_useful_copper.core.entity.CopperGolem;
-import com.cursee.more_useful_copper.core.registry.ModEntityTypesForge;
+import com.cursee.more_useful_copper.core.registry.ModEntityTypesNeoForge;
 import com.cursee.more_useful_copper.core.registry.RegistryForge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -31,7 +31,7 @@ public class MoreUsefulCopperNeoForge {
 
         @SubscribeEvent
         public static void registerAttributes(EntityAttributeCreationEvent event) {
-            event.put(ModEntityTypesForge.COPPER_GOLEM.get(), CopperGolem.createAttributes().build());
+            event.put(ModEntityTypesNeoForge.COPPER_GOLEM.get(), CopperGolem.createAttributes().build());
         }
     }
 }

@@ -31,13 +31,13 @@ public class RegistryForge {
     public static void register(IEventBus modEventBus) {
 
         ModArmorMaterialsNeoForge.register();
-
-        ModBlocksForge.register();
-        ModEntityTypesForge.register();
-        ModItemsForge.register();
+        ModBlocksNeoForge.register();
+        ModEntityTypesNeoForge.register();
+        ModItemsNeoForge.register();
         ModTabsForge.register();
         ModLootTableModifiers.register();
 
+        ARMOR_MATERIALS.register(modEventBus);
         BLOCKS.register(modEventBus);
         ENTITY_TYPES.register(modEventBus);
         ITEMS.register(modEventBus);

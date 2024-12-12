@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-public class ModBlocksForge {
+public class ModBlocksNeoForge {
 
     public static void register() {}
 

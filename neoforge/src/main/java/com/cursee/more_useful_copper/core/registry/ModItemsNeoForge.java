@@ -1,6 +1,5 @@
 package com.cursee.more_useful_copper.core.registry;
 
-import com.cursee.more_useful_copper.core.item.ModArmorMaterials;
 import com.cursee.more_useful_copper.core.item.ModWeaponTiers;
 import com.cursee.more_useful_copper.core.item.custom.CopperBucketItem;
 import com.cursee.more_useful_copper.core.item.custom.CopperMilkBucketItem;
@@ -13,7 +12,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-public class ModItemsForge {
+public class ModItemsNeoForge {
 
     public static void register() {}
 
@@ -28,7 +27,7 @@ public class ModItemsForge {
     public static final DeferredHolder<Item, Item> COPPER_MILK_BUCKET = RegistryForge.registerItem("copper_milk_bucket", () ->  new CopperMilkBucketItem(new Item.Properties().craftRemainder(COPPER_BUCKET.get()).stacksTo(1)));
     public static final DeferredHolder<Item, Item> COPPER_POWDER_SNOW_BUCKET = RegistryForge.registerItem("copper_powder_snow_bucket", () -> new CopperSolidBucketItem(Blocks.POWDER_SNOW, SoundEvents.BUCKET_EMPTY_POWDER_SNOW, (new Item.Properties()).stacksTo(1)));
     public static final DeferredHolder<Item, Item> COPPER_SHEARS = RegistryForge.registerItem("copper_shears", () ->  new ShearsItem(new Item.Properties().durability(238).component(DataComponents.TOOL, ShearsItem.createToolProperties())));
-    public static final DeferredHolder<Item, Item> COPPER_GOLEM_SPAWN_EGG = RegistryForge.registerItem("copper_golem_spawn_egg", () ->  new DeferredSpawnEggItem(() -> ModEntityTypesForge.COPPER_GOLEM.get(), 0x6D3421, 0xE77C56, new Item.Properties()));
+    public static final DeferredHolder<Item, Item> COPPER_GOLEM_SPAWN_EGG = RegistryForge.registerItem("copper_golem_spawn_egg", () ->  new DeferredSpawnEggItem(() -> ModEntityTypesNeoForge.COPPER_GOLEM.get(), 0x6D3421, 0xE77C56, new Item.Properties()));
 
     public static final DeferredHolder<Item, Item> COPPER_HORSE_ARMOR = RegistryForge.registerItem("copper_horse_armor", () ->  new AnimalArmorItem(ModArmorMaterialsNeoForge.COPPER, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
 

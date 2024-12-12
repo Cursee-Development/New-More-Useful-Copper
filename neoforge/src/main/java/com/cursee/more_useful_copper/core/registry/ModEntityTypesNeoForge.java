@@ -7,7 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-public class ModEntityTypesForge {
+public class ModEntityTypesNeoForge {
 
     public static void register() {}
 
