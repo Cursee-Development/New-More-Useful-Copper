@@ -6,6 +6,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -20,26 +21,28 @@ import java.util.function.Supplier;
 
 public class RegistryForge {
 
+    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, Constants.MOD_ID);
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Constants.MOD_ID);
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Constants.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Constants.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MOD_ID);
-
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Constants.MOD_ID);
 
     public static void register(IEventBus modEventBus) {
+
+        ModArmorMaterialsForge.register();
         ModBlocksForge.register();
         ModEntityTypesForge.register();
         ModItemsForge.register();
         ModTabsForge.register();
-
         ModLootTableModifiers.register();
 
+        ARMOR_MATERIALS.register(modEventBus);
         BLOCKS.register(modEventBus);
         ENTITY_TYPES.register(modEventBus);
         ITEMS.register(modEventBus);
         TABS.register(modEventBus);
-
         LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
     }
 

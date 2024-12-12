@@ -30,12 +30,12 @@ public class ModItemsForge {
     public static final DeferredHolder<Item, Item> COPPER_SHEARS = RegistryForge.registerItem("copper_shears", () ->  new ShearsItem(new Item.Properties().durability(238).component(DataComponents.TOOL, ShearsItem.createToolProperties())));
     public static final DeferredHolder<Item, Item> COPPER_GOLEM_SPAWN_EGG = RegistryForge.registerItem("copper_golem_spawn_egg", () ->  new DeferredSpawnEggItem(() -> ModEntityTypesForge.COPPER_GOLEM.get(), 0x6D3421, 0xE77C56, new Item.Properties()));
 
-    public static final DeferredHolder<Item, Item> COPPER_HORSE_ARMOR = RegistryForge.registerItem("copper_horse_armor", () ->  new AnimalArmorItem(ModArmorMaterials.COPPER, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
+    public static final DeferredHolder<Item, Item> COPPER_HORSE_ARMOR = RegistryForge.registerItem("copper_horse_armor", () ->  new AnimalArmorItem(ModArmorMaterialsNeoForge.COPPER, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
 
-    public static final DeferredHolder<Item, Item> COPPER_HELMET = RegistryForge.registerItem("copper_helmet", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).durability(15*13)));
-    public static final DeferredHolder<Item, Item> COPPER_CHESTPLATE = RegistryForge.registerItem("copper_chestplate", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).durability(15*16)));
-    public static final DeferredHolder<Item, Item> COPPER_LEGGINGS = RegistryForge.registerItem("copper_leggings", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).durability(15*17)));
-    public static final DeferredHolder<Item, Item> COPPER_BOOTS = RegistryForge.registerItem("copper_boots", () ->  new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).durability(15*11)));
+    public static final DeferredHolder<Item, Item> COPPER_HELMET = RegistryForge.registerItem("copper_helmet", () ->  new ArmorItem(ModArmorMaterialsNeoForge.COPPER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).durability(15*13)));
+    public static final DeferredHolder<Item, Item> COPPER_CHESTPLATE = RegistryForge.registerItem("copper_chestplate", () ->  new ArmorItem(ModArmorMaterialsNeoForge.COPPER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).durability(15*16)));
+    public static final DeferredHolder<Item, Item> COPPER_LEGGINGS = RegistryForge.registerItem("copper_leggings", () ->  new ArmorItem(ModArmorMaterialsNeoForge.COPPER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).durability(15*17)));
+    public static final DeferredHolder<Item, Item> COPPER_BOOTS = RegistryForge.registerItem("copper_boots", () ->  new ArmorItem(ModArmorMaterialsNeoForge.COPPER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).durability(15*11)));
 
     public static final DeferredHolder<Item, Item> COPPER_NUGGET = RegistryForge.registerItem("copper_nugget", () -> new Item(new Item.Properties()));
 }

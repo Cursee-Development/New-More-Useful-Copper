@@ -1,6 +1,7 @@
 package com.cursee.more_useful_copper.core.registry;
 
 import com.cursee.more_useful_copper.Constants;
+import com.cursee.more_useful_copper.core.item.ModArmorMaterials;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -15,11 +16,13 @@ import java.util.function.Supplier;
 public class RegistryFabric {
 
     public static void register() {
+
+        ModArmorMaterialsFabric.register();
+
         ModBlocksFabric.register();
         ModEntityTypesFabric.register();
         ModItemsFabric.register();
         ModTabsFabric.register();
-
         ModLootTableModifiers.register();
     }
 
