@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.function.Predicate;
 
 @Mixin(CarvedPumpkinBlock.class)
-public class ForgeCarvedPumpkinBlockMixin {
+public class NeoForgeCarvedPumpkinBlockMixin {
 
     @Unique
     private static final Predicate<BlockState> PUMPKINS_PREDICATE = (state) -> state != null && (state.is(Blocks.CARVED_PUMPKIN) || state.is(Blocks.JACK_O_LANTERN));

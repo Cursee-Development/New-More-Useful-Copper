@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Cow.class)
-public class ForgeCowMixin {
+public class NeoForgeCowMixin {
 
     @Inject(method = "mobInteract", at = @At("HEAD"))
     private void injected$onMobInteract(Player player, InteractionHand interactionHand, CallbackInfoReturnable<InteractionResult> cir) {
