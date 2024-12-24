@@ -29,8 +29,6 @@ import java.util.UUID;
 
 public class CopperGolem extends PathfinderMob implements NeutralMob {
 
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Constants.MOD_ID, "copper_golem"), "main");
-
     private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.BOOLEAN);
 
     public int attackAnimationTimeout = 0;

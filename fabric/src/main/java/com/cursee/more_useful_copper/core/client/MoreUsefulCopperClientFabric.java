@@ -1,5 +1,6 @@
 package com.cursee.more_useful_copper.core.client;
 
+import com.cursee.more_useful_copper.MoreUsefulCopperClient;
 import com.cursee.more_useful_copper.core.client.entity.model.CopperGolemModel;
 import com.cursee.more_useful_copper.core.client.entity.renderer.CopperGolemRenderer;
 import com.cursee.more_useful_copper.core.entity.CopperGolem;
@@ -18,7 +19,7 @@ public class MoreUsefulCopperClientFabric implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocksFabric.COPPER_CHAIN, RenderType.cutout());
 
-        EntityModelLayerRegistry.registerModelLayer(CopperGolem.LAYER_LOCATION, CopperGolemModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(MoreUsefulCopperClient.LAYER_LOCATION, CopperGolemModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntityTypesFabric.COPPER_GOLEM, CopperGolemRenderer::new);
 
         // EntityElderGuardianSplitFix ??? todo: investigate

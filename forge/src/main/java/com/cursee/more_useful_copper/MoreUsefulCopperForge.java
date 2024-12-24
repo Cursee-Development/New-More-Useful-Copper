@@ -5,6 +5,7 @@ import com.cursee.more_useful_copper.core.client.entity.model.CopperGolemModel;
 import com.cursee.more_useful_copper.core.entity.CopperGolem;
 import com.cursee.more_useful_copper.core.registry.ModEntityTypesForge;
 import com.cursee.more_useful_copper.core.registry.RegistryForge;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,16 +24,20 @@ public class MoreUsefulCopperForge {
     }
 
     @Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class CommonEvents {
-
-        @SubscribeEvent
-        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(CopperGolem.LAYER_LOCATION, CopperGolemModel::createBodyLayer);
-        }
+    public static class ModBusEvents {
 
         @SubscribeEvent
         public static void registerAttributes(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypesForge.COPPER_GOLEM.get(), CopperGolem.createAttributes().build());
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModBusEvents {
+
+        @SubscribeEvent
+        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(MoreUsefulCopperClient.LAYER_LOCATION, CopperGolemModel::createBodyLayer);
         }
     }
 }
