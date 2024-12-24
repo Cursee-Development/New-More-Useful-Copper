@@ -5,6 +5,7 @@ import com.cursee.more_useful_copper.core.client.entity.model.CopperGolemModel;
 import com.cursee.more_useful_copper.core.entity.CopperGolem;
 import com.cursee.more_useful_copper.core.registry.ModEntityTypesNeoForge;
 import com.cursee.more_useful_copper.core.registry.RegistryNeoForge;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -22,16 +23,20 @@ public class MoreUsefulCopperNeoForge {
     }
 
     @EventBusSubscriber(modid = Constants.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
-    public static class CommonEvents {
-
-        @SubscribeEvent
-        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(CopperGolem.LAYER_LOCATION, CopperGolemModel::createBodyLayer);
-        }
+    public static class ModBusEvents {
 
         @SubscribeEvent
         public static void registerAttributes(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypesNeoForge.COPPER_GOLEM.get(), CopperGolem.createAttributes().build());
+        }
+    }
+
+    @EventBusSubscriber(modid = Constants.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModBusEvents {
+
+        @SubscribeEvent
+        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(MoreUsefulCopperClient.LAYER_LOCATION, CopperGolemModel::createBodyLayer);
         }
     }
 }
